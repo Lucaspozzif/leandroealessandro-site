@@ -13,8 +13,3 @@ export function ReadProfessional() {
     })
     return (profLists)
 }
-export function WriteProfessional() {
-    const [data] = useState('')
-
-    const professionalCollectionRef = collection(db, 'professionals')
-}

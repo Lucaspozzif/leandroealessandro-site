@@ -1,5 +1,5 @@
 import { BottomButtons } from "../../Content/bottomButtons/bottomButtons"
-import { ReadProfessional } from "../../Content/Firebase/firestoreData"
+import { ReadProfessional } from "../../Content/Firebase/firestoreDataReader"
 import { ItemListProf } from "../../Content/itemList/itemList"
 
 export function ProfessionalPage() {

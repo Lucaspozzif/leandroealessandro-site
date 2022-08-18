@@ -17,7 +17,7 @@ export default function App() {
         <Route path='/select-professional' element={<ProfessionalPage />}></Route>
         <Route path='/select-service/:profIndex' element={<ServicePage />}></Route>
         <Route path='/select-time/:profIndex/:servIndex' element={<TimePage />}></Route>
-        <Route path='/confirm/:profIndex/:servIndex/:timeIndex' element={<ConfirmPage />}></Route>
+        <Route path='/confirm/:profIndex/:servIndex/:dayIndex/:timeIndex' element={<ConfirmPage />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
     </Router>

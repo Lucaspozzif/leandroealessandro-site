@@ -17,7 +17,7 @@ export function ItemListServ(props) {
 export function ItemListTime(props) {
     if(props.msg['taken'] == false){
         return (
-            <a href={'/confirm/'+props.profIndex+'/'+props.servIndex+'/'+props.index}>
+            <a href={'/confirm/'+props.profIndex+'/'+props.servIndex+'/'+props.dayIndex+'/'+props.index}>
                 <h1>{time[props.index]}</h1>
             </a>
         )

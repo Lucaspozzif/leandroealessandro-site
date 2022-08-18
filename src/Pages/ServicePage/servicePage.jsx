@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { BottomButtons } from '../../Content/bottomButtons/bottomButtons';
-import { ReadProfessional } from '../../Content/Firebase/firestoreData';
+import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 import { ItemListServ } from '../../Content/itemList/itemList';
 
 export function ServicePage() {

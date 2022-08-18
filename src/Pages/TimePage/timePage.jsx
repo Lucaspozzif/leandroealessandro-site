@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { ReadProfessional } from '../../Content/Firebase/firestoreData';
+import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 import { ItemListTime } from '../../Content/itemList/itemList';
 import { checkGenerateDay } from '../../Content/scheduleManagement/schedule';
 
@@ -20,6 +20,7 @@ export function TimePage() {
                     index={data[profIndex]['schedule'][today].indexOf(hour)}
                     servIndex = {servIndex}
                     profIndex = {profIndex}
+                    dayIndex = {today}
                     />
 
                 )
