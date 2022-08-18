@@ -1,13 +1,25 @@
+import { BottomButtons } from "../../Content/bottomButtons/bottomButtons"
 import { ReadProfessional } from "../../Content/Firebase/firestoreData"
-import { ItemList } from "../../Content/itemList/itemList"
+import { ItemListProf } from "../../Content/itemList/itemList"
 
 export function ProfessionalPage() {
     const data = ReadProfessional()
-    console.log(data)
     return (
         <>
-            tete
-            <ItemList />
+            {data.map(
+                (prof => {
+                    return (
+                        <ItemListProf
+                            msg={prof}
+                            title={'name'}
+                            subtitle={'occupation'}
+                            index={data.indexOf(prof)}
+                        />
+                    )
+                })
+            )
+            }
+            <BottomButtons left={'Voltar'} right={'Serviços'} link={'/select-service'} />
         </>
     )
 }
