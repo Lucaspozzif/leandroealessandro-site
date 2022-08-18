@@ -1,19 +1,17 @@
-import { async } from "@firebase/util";
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
 
 export function ReadProfessional() {
     const [profLists, setProfList] = useState([])
-    const professionalCollectionRef = collection(db, 'professionals')
-    //useEffect(() => {
+    useEffect(() => {
         const getProfs = async () => {
-            const data = await getDocs(professionalCollectionRef)
+            const data = await getDocs(collection(db, 'professionals'))
             setProfList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
         }
-        getProfs()
-    //})
-    return(profLists)
+        if(profLists.length == 0)getProfs()
+    })
+    return (profLists)
 }
 export function WriteProfessional() {
     const [data] = useState('')
