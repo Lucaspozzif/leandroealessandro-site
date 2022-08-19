@@ -9,6 +9,10 @@ const { time } = require('../../data/hourCount/hourcount.json')
 export function ConfirmPage() {
     var navigate = useNavigate()
     const [name, setName] = useState('')
+    const [number, setNumber] = useState('')
+    const numberValue = (e) => {
+        setNumber(e.target.value)
+    }
     const nameValue = (e) => {
         setName(e.target.value)
     }
@@ -23,9 +27,14 @@ export function ConfirmPage() {
 
     prof['schedule'][dayIndex][timeIndex]['service'] = prof['services'][servIndex]
     prof['schedule'][dayIndex][timeIndex]['name'] = name
+    prof['schedule'][dayIndex][timeIndex]['number'] = number
     prof['schedule'][dayIndex][timeIndex]['taken'] = true
 
     const addSchedule = async () => {
+        if(name == ''||number == ''){
+            alert('digite seu nome e número por favor')
+            return
+        }
         const profRef = doc(db, 'professionals', data[profIndex]['id'])
         const update = {
             name: prof['name'],
@@ -46,6 +55,8 @@ export function ConfirmPage() {
             </div>
             <p>Digite seu nome</p>
             <input onChange={nameValue}></input>
+            <p>Digite seu número</p>
+            <input type={number} onChange={numberValue}></input>
             <div>
                 <p>Alterar Horário</p>
                 <p>Dia {dayIndex.split('.').join('/')} - {time[timeIndex]}</p>

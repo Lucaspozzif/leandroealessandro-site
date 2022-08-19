@@ -9,6 +9,7 @@ export function TimePage() {
     const { profIndex } = useParams();
     const { servIndex } = useParams();
     const { dayIndex } = useParams();
+    console.log(dayIndex)
     if (data.length == 0) return
     checkGenerateDay(data, dayIndex, profIndex)
     return (
@@ -25,7 +26,7 @@ export function TimePage() {
                         index={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
                         servIndex={servIndex}
                         profIndex={profIndex}
-                        today={dayIndex}
+                        dayIndex={dayIndex}
                     />
                 )
             })}
