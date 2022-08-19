@@ -4,6 +4,11 @@ import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 import { ItemListTime } from '../../Content/itemList/itemList';
 import { checkGenerateDay } from '../../Content/scheduleManagement/schedule';
 
+import '../../Style/reset.css'
+import '../../Style/style.css'
+import '../../Style/selectPages.css'
+
+
 export function TimePage() {
     var data = ReadProfessional()
     const { profIndex } = useParams();
@@ -13,7 +18,7 @@ export function TimePage() {
     if (data.length == 0) return
     checkGenerateDay(data, dayIndex, profIndex)
     return (
-        <>
+        <div className='backgroundColor'>
             <DaySelector
                 day={dayIndex}
                 servIndex={servIndex}
@@ -31,7 +36,7 @@ export function TimePage() {
                 )
             })}
 
-        </>
+        </div>
     )
 
 }

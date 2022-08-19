@@ -3,6 +3,10 @@ import { BottomButtons } from '../../Content/bottomButtons/bottomButtons';
 import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 import { ItemListServ } from '../../Content/itemList/itemList';
 
+import '../../Style/reset.css'
+import '../../Style/style.css'
+import '../../Style/selectPages.css'
+
 export function ServicePage() {
     var data = ReadProfessional()
     const { profIndex } = useParams();
@@ -10,7 +14,7 @@ export function ServicePage() {
         return console.log('vazio')
     }
     return (
-        <>
+        <div className='backgroundColor'>
             {data[profIndex]['services'].map((serv) => {
                 return (
                     <ItemListServ
@@ -22,7 +26,7 @@ export function ServicePage() {
                 )
             })}
             <BottomButtons />
-        </>
+        </div>
     )
 
 }

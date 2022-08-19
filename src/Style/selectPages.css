@@ -1,0 +1,11 @@
+
+.backgroundColor{
+    background-color: #33372F;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.body{
+    background-color: #33372F;
+    min-height: 100vh;
+}

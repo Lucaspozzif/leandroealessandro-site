@@ -1,0 +1,17 @@
+.group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.moveButton{
+    height: 20px;
+    width: 80px;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+}
+.date{
+    font-size: 14px;
+    color: #DED290;
+}

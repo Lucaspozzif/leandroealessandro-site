@@ -1,0 +1,9 @@
+
+.scheduleButton{
+    height: 60px;
+    width: 290px;
+    padding-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+    display: grid;
+}
