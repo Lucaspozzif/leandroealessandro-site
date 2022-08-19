@@ -4,6 +4,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../../Content/Firebase/firebase';
 import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 
+import '../../Style/reset.css'
+import '../../Style/style.css'
+import './confirmPage.css'
+
 const { time } = require('../../data/hourCount/hourcount.json')
 
 export function ConfirmPage() {
@@ -31,7 +35,7 @@ export function ConfirmPage() {
     prof['schedule'][dayIndex][timeIndex]['taken'] = true
 
     const addSchedule = async () => {
-        if(name == ''||number == ''){
+        if (name == '' || number == '') {
             alert('digite seu nome e número por favor')
             return
         }
@@ -47,35 +51,64 @@ export function ConfirmPage() {
     }
 
     return (
-        <>
-            <p>Você está quase acabando</p>
-            <div>
-                <p>{prof['services'][servIndex]} - {time[timeIndex]}</p>
-                <p>com {prof['name']}</p>
-            </div>
-            <p>Digite seu nome</p>
-            <input onChange={nameValue}></input>
-            <p>Digite seu número</p>
-            <input type={number} onChange={numberValue}></input>
-            <div>
-                <p>Alterar Horário</p>
-                <p>Dia {dayIndex.split('.').join('/')} - {time[timeIndex]}</p>
-            </div>
-            <div>
-                <p>Alterar Profissional</p>
-                <p>{prof['name']}</p>
-            </div>
-            <div>
-                <a href='/'>Cancelar</a>
-                <a
-                    onClick={(e) => {
-                        addSchedule()
-                    }}
-                    >
-                    Concluir
+        <div className='body'>
+            <div className='backgroundColor'>
+                <div className='center'>
+                    <h1 className='pageTitle'>Você está quase acabando</h1>
+                    <div className='button scheduleButton'>
+                        <div>
+                            <h1>{prof['services'][servIndex]} - {time[timeIndex]}</h1>
+                            <p>Com {prof['name']}</p>
+                        </div>
+                    </div>
+
+                    <div className='spaceBox'></div>
+
+                    <p className='inputLabel'>Digite seu nome</p>
+                    <input onChange={nameValue}></input>
+
+                    <div className='spaceBox'></div>
+
+                    <p className='inputLabel'>Digite seu número</p>
+                    <input type={number} onChange={numberValue}></input>
+
+                </div>
+
+                <div className='spaceBox'></div>
+                <div className='spaceBox'></div>
+                <div className='button changeButton'>
+                    <h1>Alterar Horário</h1>
+                    <p>Dia {dayIndex.split('.').join('/')} - {time[timeIndex]}</p>
+                </div>
+                <div className='spaceBox'></div>
+
+                <a>
+                    <div className='button changeButton'>
+                        <h1>Alterar Profissional</h1>
+                        <p>{prof['name']}</p>
+                    </div>
                 </a>
+                <div className='bottomGroup'>
+                    <a href='/'>
+                        <div className='button bottomButton left'>
+                            <h1>
+                                Cancelar
+                            </h1>
+                        </div>
+                    </a>
+
+                    <a onClick={(e) => { addSchedule() }}>
+                        <div className='button bottomButton right'>
+                            <h1>
+                            Concluir
+                            </h1>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </>
+
+        </div>
+
     )
 
 }

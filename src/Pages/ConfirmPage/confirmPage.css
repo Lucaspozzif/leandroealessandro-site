@@ -1,0 +1,26 @@
+.inputLabel{
+    font-size: 16px;
+    color: #AC814F;
+}
+.changeButton{
+    height: 60px;
+    width: 190px;
+    display: grid;
+    align-content: center;
+    padding-left: 10px;
+}
+.bottomButton{
+    position: absolute;
+    height: 40px;
+    width: 120px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    bottom: 20px;
+}
+.left{
+    left: 20px;
+}
+.right{
+    right: 20px;
+}

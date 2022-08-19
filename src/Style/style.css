@@ -9,10 +9,35 @@ p{
     color: #AC814F;
 }
 .button{
-    background-color: #AC814F;
+    background-color: #825C3B;
     color: #DED290;
     border-radius: 5px;
 }
 a{
     text-decoration: none;
+}
+input{
+    height: 30px;
+    width: 290px;
+    background-color: #545550;
+    border: none;
+    border-radius: 5px;
+    margin-top: 6px;
+    color: #DED290;
+    font-size: 20px;
+    padding-left:10px ;
+    outline: none;
+
+}
+.center{
+    display: grid;
+    justify-content: center;
+}
+.pageTitle{
+    margin: 10px;
+    text-align: center;
+}
+.spaceBox{
+    height: 10px;
+    width: 10px;
 }
