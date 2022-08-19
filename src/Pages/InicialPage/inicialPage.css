@@ -1,0 +1,33 @@
+.inicialPage{
+    background-color: #545550;
+    height: 100vh;
+}
+.background{
+    background-color: #33372F;
+    position: relative;
+    height: 200px;
+}
+.logoImage{
+    width: 100px;
+    position: absolute;
+    top: -18px;
+    left: 0;
+}
+.textBlock{
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+.salutation{
+    width: 145px;
+}
+.inicialButton{
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    height: 40px;
+    width: 120px;
+    right: 40px;
+    bottom: 40px;
+}

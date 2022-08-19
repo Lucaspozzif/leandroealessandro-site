@@ -1,0 +1,15 @@
+h1{
+    font-size: 22px;
+    color: #DED290;
+}
+p{
+    font-size: 12px;
+}
+.darkText{
+    color: #AC814F;
+}
+.button{
+    background-color: #AC814F;
+    color: #DED290;
+    border-radius: 5px;
+}
