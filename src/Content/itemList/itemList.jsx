@@ -1,4 +1,5 @@
 const { time } = require('../../data/hourCount/hourcount.json')
+const { today } = require('../../data/Today/today')
 export function ItemListProf(props) {
     return (
         <a href={"/select-service/" + props.index}>
@@ -9,15 +10,15 @@ export function ItemListProf(props) {
 }
 export function ItemListServ(props) {
     return (
-        <a href={"/select-time/" + props.profIndex + '/' + props.servIndex}>
+        <a href={"/select-time/" + props.profIndex + '/' + props.servIndex + '/' + today}>
             <h1>{props.msg}</h1>
         </a>
     )
 }
 export function ItemListTime(props) {
-    if(props.msg['taken'] == false){
+    if (props.msg['taken'] == false) {
         return (
-            <a href={'/confirm/'+props.profIndex+'/'+props.servIndex+'/'+props.dayIndex+'/'+props.index}>
+            <a href={'/confirm/' + props.profIndex + '/' + props.servIndex + '/' + props.dayIndex + '/' + props.index}>
                 <h1>{time[props.index]}</h1>
             </a>
         )

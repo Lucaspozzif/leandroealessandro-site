@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { DaySelector } from '../../Content/daySelector/daySelector';
 import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
 import { ItemListTime } from '../../Content/itemList/itemList';
 import { checkGenerateDay } from '../../Content/scheduleManagement/schedule';
@@ -7,24 +8,28 @@ export function TimePage() {
     var data = ReadProfessional()
     const { profIndex } = useParams();
     const { servIndex } = useParams();
+    const { dayIndex } = useParams();
     if (data.length == 0) return
-    const date = new Date()
-    const today = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear()
-    checkGenerateDay(data, today, profIndex)
+    checkGenerateDay(data, dayIndex, profIndex)
     return (
         <>
-            {data[profIndex]['schedule'][today].map((hour) => {
+            <DaySelector
+                day={dayIndex}
+                servIndex={servIndex}
+                profIndex={profIndex}
+            />
+            {data[profIndex]['schedule'][dayIndex].map((hour) => {
                 return (
                     <ItemListTime
-                    msg={hour}
-                    index={data[profIndex]['schedule'][today].indexOf(hour)}
-                    servIndex = {servIndex}
-                    profIndex = {profIndex}
-                    dayIndex = {today}
+                        msg={hour}
+                        index={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
+                        servIndex={servIndex}
+                        profIndex={profIndex}
+                        today={dayIndex}
                     />
-
                 )
             })}
+
         </>
     )
 

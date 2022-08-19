@@ -6,8 +6,6 @@ import { ItemListServ } from '../../Content/itemList/itemList';
 export function ServicePage() {
     var data = ReadProfessional()
     const { profIndex } = useParams();
-    const service = data
-    //
     if (data.length == 0) {
         return console.log('vazio')
     }

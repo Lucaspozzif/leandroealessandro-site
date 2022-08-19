@@ -1,5 +1,3 @@
-import { ConfirmedPage } from "../Firebase/write/write"
-
 export function BottomButtons(props) {
     return (
         <>
