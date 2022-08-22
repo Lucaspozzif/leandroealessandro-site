@@ -1,7 +1,7 @@
 import '../../Style/reset.css'
 import '../../Style/style.css'
 import './inicialPage.css'
-
+import {Link} from 'react-router-dom'
 export function InicialPage() {
     return (
         <div className='inicialPage'>
@@ -11,9 +11,9 @@ export function InicialPage() {
             <h1>Olá!</h1>
             <p className='darkText salutation'>Nós do Salão Leandro e Alessandro estamos prontos para atendê-lo</p>
             </div>
-            <a href="/select-professional">
+            <Link to="/select-professional">
                 <div className='button inicialButton'><h1>Agendar</h1></div>
-            </a>
+            </Link>
         </div>
 
         </div>

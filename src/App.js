@@ -15,7 +15,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path='/' element={<InicialPage />}></Route>
-        <Route path='https://leandroealessandro/test' element={<Test />}></Route>
+        <Route path='/test' element={<Test />}></Route>
         <Route path='/select-professional' element={<ProfessionalPage />}></Route>
         <Route path='/select-service/:profIndex' element={<ServicePage />}></Route>
         <Route path='/select-time/:profIndex/:servIndex/:dayIndex' element={<TimePage />}></Route>

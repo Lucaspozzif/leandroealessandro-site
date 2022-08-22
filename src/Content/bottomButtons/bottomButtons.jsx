@@ -1,16 +1,17 @@
+import {Link} from 'react-router-dom'
 export function BottomButtons(props) {
     return (
         <>
-            <a href="/">{props.left}</a>
-            <a href={props.link} >{props.right}</a>
+            <Link to="/">{props.left}</Link>
+            <Link to={props.link} >{props.right}</Link>
         </>
     )
 }
 export function BottomButtonsConfirm(props) {
     return (
         <div onClick={props.click}>
-            <a href="/">{props.left}</a>
-            <a href={props.link} >{props.right}</a>
+            <Link to="/">{props.left}</Link>
+            <Link to={props.link} >{props.right}</Link>
         </div>
     )
 }

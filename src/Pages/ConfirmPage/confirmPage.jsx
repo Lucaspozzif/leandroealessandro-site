@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../../Content/Firebase/firebase';
 import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
+import {Link} from 'react-router-dom'
 
 import '../../Style/reset.css'
 import '../../Style/style.css'
@@ -82,28 +83,28 @@ export function ConfirmPage() {
                 </div>
                 <div className='spaceBox'></div>
 
-                <a>
+                <div>
                     <div className='button changeButton'>
                         <h1>Alterar Profissional</h1>
                         <p>{prof['name']}</p>
                     </div>
-                </a>
+                </div>
                 <div className='bottomGroup'>
-                    <a href='/'>
+                    <Link to='/'>
                         <div className='button bottomButton left'>
                             <h1>
                                 Cancelar
                             </h1>
                         </div>
-                    </a>
+                    </Link>
 
-                    <a onClick={(e) => { addSchedule() }}>
+                    <div onClick={(e) => { addSchedule() }}>
                         <div className='button bottomButton right'>
                             <h1>
                             Concluir
                             </h1>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
 

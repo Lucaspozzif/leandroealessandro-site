@@ -25,7 +25,6 @@ export function ServicePage() {
                     />
                 )
             })}
-            <BottomButtons />
         </div>
     )
 

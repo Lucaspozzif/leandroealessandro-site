@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { DateGenerator } from '../dateGenerator/dateGenerator'
+import {Link} from 'react-router-dom'
+
 
 import '../../Style/reset.css'
 import '../../Style/style.css'
@@ -20,7 +22,7 @@ export function DaySelector(props) {
 
     return (
         <div className='group'>
-            <a onClick={
+            <div onClick={
                 () => {
                     if (currentDay > 0) currentDay--
                     previousDay.setDate(previousDay.getDate() + currentDay)
@@ -38,10 +40,10 @@ export function DaySelector(props) {
                         Voltar
                     </h2>
                 </div>
-            </a>
+            </div>
 
             <p className='date'>{day.join('/')}</p>
-            <a onClick={
+            <div onClick={
                 () => {
                     currentDay++
                     nextDay.setDate(nextDay.getDate() + currentDay)
@@ -59,7 +61,7 @@ export function DaySelector(props) {
                         Avançar
                     </h2>
                 </div>
-            </a>
+            </div>
         </div>
     )
 }
