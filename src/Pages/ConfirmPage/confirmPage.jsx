@@ -28,13 +28,15 @@ export function ConfirmPage() {
     const { dayIndex } = useParams();
     const { timeIndex } = useParams();
     if (data.length == 0) return
+
     const prof = data[profIndex];
-
-    prof['schedule'][dayIndex][timeIndex]['service'] = prof['services'][servIndex]
-    prof['schedule'][dayIndex][timeIndex]['name'] = name
-    prof['schedule'][dayIndex][timeIndex]['number'] = number
-    prof['schedule'][dayIndex][timeIndex]['taken'] = true
-
+    for (let i = timeIndex; i < parseInt(prof['services'][servIndex]['time'])+parseInt(timeIndex); i++) {
+        prof['schedule'][dayIndex][i]['service'] = prof['services'][servIndex]['name']
+        prof['schedule'][dayIndex][i]['name'] = name
+        prof['schedule'][dayIndex][i]['number'] = number
+        prof['schedule'][dayIndex][i]['taken'] = true
+    
+    }
     const addSchedule = async () => {
         if (name == '' || number == '') {
             alert('digite seu nome e número por favor')
@@ -50,7 +52,6 @@ export function ConfirmPage() {
         await setDoc(profRef, update)
         navigate('/')
     }
-
     return (
         <div className='body'>
             <div className='backgroundColor'>
@@ -58,7 +59,7 @@ export function ConfirmPage() {
                     <h1 className='pageTitle'>Você está quase acabando</h1>
                     <div className='button scheduleButton'>
                         <div>
-                            <h1>{prof['services'][servIndex]} - {time[timeIndex]}</h1>
+                            <h1>{prof['services'][servIndex]['name']}, de {time[timeIndex]} as {time[parseInt(prof['services'][servIndex]['time'])+parseInt(timeIndex)]}</h1>
                             <p>Com {prof['name']}</p>
                         </div>
                     </div>

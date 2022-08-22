@@ -10,9 +10,7 @@ import '../../Style/selectPages.css'
 export function ServicePage() {
     var data = ReadProfessional()
     const { profIndex } = useParams();
-    if (data.length == 0) {
-        return console.log('vazio')
-    }
+    if (data.length == 0) return
     return (
         <div className='backgroundColor'>
             {data[profIndex]['services'].map((serv) => {

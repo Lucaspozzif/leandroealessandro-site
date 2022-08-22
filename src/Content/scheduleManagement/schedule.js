@@ -1,7 +1,9 @@
 import { doc, setDoc } from "firebase/firestore"
+import { currentDay, date } from "../../data/Today/today"
 import { db } from "../Firebase/firebase"
 
 const emptyDay = []
+const lockedDay = []
 for (let i = 0; i < 24; i++) {
     emptyDay.push(
         {
@@ -11,13 +13,26 @@ for (let i = 0; i < 24; i++) {
             service: '',
         }
     )
+    lockedDay.push(
+        {
+            taken: true,
+            name: 'bloqueado',
+            number:'bloqueado',
+            service: 'bloqueado',
+        }
+    )
 }
 
 export function checkGenerateDay(data, dateTime, profIndex) {
     const prof = data[profIndex]
     if (prof['schedule'][dateTime]) return
-    console.log(prof['schedule'])
-    prof['schedule'][dateTime]= emptyDay
+    if(dateTime.split('$')[1] == 0 || dateTime.split('$')[1] == 1){
+        prof['schedule'][dateTime]= lockedDay
+
+    }else{
+        prof['schedule'][dateTime]= emptyDay
+
+    }
     const addSchedule = async () => {
         const profRef = doc(db, 'professionals', data[profIndex]['id'])
         const update = {

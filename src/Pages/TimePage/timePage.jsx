@@ -14,27 +14,32 @@ export function TimePage() {
     const { profIndex } = useParams();
     const { servIndex } = useParams();
     const { dayIndex } = useParams();
-    console.log(dayIndex)
     if (data.length == 0) return
     checkGenerateDay(data, dayIndex, profIndex)
     return (
-        <div className='backgroundColor'>
-            <DaySelector
-                day={dayIndex}
-                servIndex={servIndex}
-                profIndex={profIndex}
-            />
-            {data[profIndex]['schedule'][dayIndex].map((hour) => {
-                return (
-                    <ItemListTime
-                        msg={hour}
-                        index={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
-                        servIndex={servIndex}
-                        profIndex={profIndex}
-                        dayIndex={dayIndex}
-                    />
-                )
-            })}
+        <div className='body'>
+            <div className='backgroundColor'>
+                <DaySelector
+                    day={dayIndex}
+                    servIndex={servIndex}
+                    profIndex={profIndex}
+                />
+                {data[profIndex]['schedule'][dayIndex].map((hour) => {
+                    return (
+                        <ItemListTime
+                            data={data[profIndex]['schedule'][dayIndex]}
+                            key={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
+                            service={data[profIndex]['services'][servIndex]['time']}
+                            msg={hour}
+                            index={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
+                            servIndex={servIndex}
+                            profIndex={profIndex}
+                            dayIndex={dayIndex}
+                        />
+                    )
+                })}
+
+            </div>
 
         </div>
     )

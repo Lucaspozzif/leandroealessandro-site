@@ -8,7 +8,7 @@ import '../../Style/style.css'
 import '../../Style/selectPages.css'
 import './daySelector.css'
 
-const { date } = require('../../data/Today/today')
+const { date, today } = require('../../data/Today/today')
 var { currentDay } = require('../../data/Today/today')
 
 export function DaySelector(props) {

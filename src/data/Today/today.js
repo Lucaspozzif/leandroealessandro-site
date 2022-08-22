@@ -1,3 +1,5 @@
+import { DateGenerator } from "../../Content/dateGenerator/dateGenerator"
+
 export const date = new Date()
-export const today = date.getDate()+'.'+date.getMonth()+'.'+date.getFullYear()
+export const today = DateGenerator(date)
 export var currentDay = 0

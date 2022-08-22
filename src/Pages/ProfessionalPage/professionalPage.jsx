@@ -15,6 +15,7 @@ export function ProfessionalPage() {
                 (prof => {
                     return (
                         <ItemListProf
+                        key = {prof['name']}
                             msg={prof}
                             title={'name'}
                             subtitle={'occupation'}
