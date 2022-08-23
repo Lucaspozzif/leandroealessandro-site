@@ -77,7 +77,7 @@ For some reason, the font is ugly, change it
 Change the font in css
 
 ## Bug 6 - `Professional Schedule Check page inexistent`
-#### solved: ``no``
+#### solved: ``working on``
 #### Urgency level: `2`
 ### Problem
 There is not a way for the professional to check their schedule

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export function InicialPage() {
     return (
-        <div className='inicialPage'>
+        <div  className='inicialPage'>
             <div className='background'>
                 <img className='logoImage' src={require('../../Assets/Logo/logoBranca.png')} />
                 <div className='textBlock'>

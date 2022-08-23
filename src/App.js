@@ -10,6 +10,8 @@ import { TimePage } from './Pages/TimePage/timePage';
 import { ConfirmPage } from './Pages/ConfirmPage/confirmPage';
 import { Test } from './Content/test';
 import { LastConfirmPage } from './Pages/LastConfirmPage/lastConfirmPage';
+import { ProfessionalSchedulePage } from './Pages/ProfessionalSchedulePage/professionalSchedulePage';
+import { IndividualSchedule } from './Pages/IndividualSchedule/individualSchedule';
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
         <Route path='/select-time/:profIndex/:servIndex/:dayIndex' element={<TimePage />}></Route>
         <Route path='/confirm/:profIndex/:servIndex/:dayIndex/:timeIndex' element={<ConfirmPage />}></Route>
         <Route path='/confirmed/:profIndex/:servIndex/:dayIndex/:timeIndex' element={<LastConfirmPage />}></Route>
+        <Route path='p' element={<ProfessionalSchedulePage />}></Route>
+        <Route path='p/:profIndex/:dayIndex' element={<IndividualSchedule />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
     </Router>

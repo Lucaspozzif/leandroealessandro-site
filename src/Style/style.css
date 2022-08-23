@@ -13,6 +13,12 @@ p{
     color: #DED290;
     border-radius: 5px;
 }
+.greyButton{
+    background-color: #707070;
+    color: #DED290;
+    border-radius: 5px;
+
+}
 a{
     text-decoration: none;
 }

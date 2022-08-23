@@ -65,3 +65,55 @@ export function DaySelector(props) {
         </div>
     )
 }
+export function DaySelectorIndividual(props) {
+    const navigate = useNavigate();
+    var day = props.day.split('.')
+    day[1]++
+    day.pop()
+
+    var previousDay = new Date(date)
+    var nextDay = new Date(date)
+
+    return (
+        <div className='group'>
+            <div onClick={
+                () => {
+                    if (currentDay > 0) currentDay--
+                    previousDay.setDate(previousDay.getDate() + currentDay)
+                    var displayPreviousDay = DateGenerator(previousDay)
+                    navigate(
+                        "/p/" +
+                        props.profIndex + '/' +
+                        displayPreviousDay
+                    )
+                }
+            }>
+                <div className='button moveButton'>
+                    <h2>
+                        Voltar
+                    </h2>
+                </div>
+            </div>
+
+            <p className='date'>{day.join('/')}</p>
+            <div onClick={
+                () => {
+                    currentDay++
+                    nextDay.setDate(nextDay.getDate() + currentDay)
+                    var displayNextDay = DateGenerator(nextDay)
+                    navigate(
+                        "/p/" +
+                        props.profIndex + '/' +
+                        displayNextDay
+                    )
+                }
+            }>
+                <div className='button moveButton'>
+                    <h2>
+                        Avançar
+                    </h2>
+                </div>
+            </div>
+        </div>
+    )
+}
