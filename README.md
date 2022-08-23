@@ -37,58 +37,69 @@ A detailed description of the problem and why it should be solved in that urgenc
 If you have some logic in mind that can solve the problem you can put it here, so it will be easyer to solve and can be released faster
 
 ## Bug 1 - `Last confirming screen`
-solved: `yes`
-Urgency level: 1
+#### solved: `yes`; 
+#### Urgency level: `1`
 ### Problem
 After choosing a time and confirming it, the customer is just redirected to the inicial page, it's not ideal, the customer don't know if the site just glitched or if it is already marked
 ### Solution
 Create a confirmed service page
 
-## The services don't have different times
-solved: `yes`
-Urgency level: 2
+## Bug 2 - `The services don't have different times`
+#### solved: `yes`; 
+#### Urgency level: `2`
 ### Problem
 Different services, as corte and escova, have the same time (30 minutes), when they hould be at least one hour, if it stays like this, the customers will be able to schedule the time that is unavailable
 ### Solution
 Turn the service array in database, an array of arrays, that can store the service.name and the service.time, that will be a number that represents how mutvh time it will took
 
-## Schedule available in Sundays and Mondays
-solved: `yes`
-Urgency level: 2
+## Bug 3 - `Schedule available in Sundays and Mondays`
+#### solved: `yes`; 
+#### Urgency level: `2`
 ### Problem
 The shop does not open in this days, but customers still able to select services for these days.
 ### Solution
 make the "taken" atribbute, be took in sundays and mondays automatically
 
-## The site is missing animations
-solved: false
-Urgency level: 0
+## Bug 4 - `The site is missing animations`
+#### solved: ``no``; 
+#### Urgency level: `0`
 ### Problem
 The site don't have any annimation, witch makes it really boring and unintresting, maybe some animation will bring some life to it
 ### Solution
 Make css and javascript animations
 
-## The font is ugly
-solved: false
-Urgency level: 0
+## Bug 5 - `The font is ugly`
+#### solved: ``no``; 
+#### Urgency level: `0`
 ### Problem
 For some reason, the font is ugly, change it
 ### Solution
 Change the font in css
 
-## Professional Schedule Check page inexistent
-solved: no
-Urgency level: 2
+## Bug 6 - `Professional Schedule Check page inexistent`
+#### solved: ``no``
+#### Urgency level: `2`
 ### Problem
 There is not a way for the professional to check their schedule
 
-## Price Tables page
-solved : no
-Urgency level: 2
+## Bug 7 - `Price Tables page`
+#### solved : ``no``
+#### Urgency level: `2`
 ### Problem
 there is not a way to the customers to know the price
 ### Solution
 Create a page and a link in the inicial page to the price table page
 
-## Change Professional and change time buttons not working
-solved : no
+## Bug 8 - `Change Professional and change time buttons not working`
+#### solved : ``no``
+#### Urgency level: `2`
+### Problem
+The buttons on the confirm screen to change professional and time are not working
+### Solution
+Create links for go back and change this informations
+
+## Bug 9 - `There is not a go back button for mobile users`
+#### solved : `no`
+#### Urgency level: `1`
+### Problem
+Mobile users don't have a internal way to go back when choosing something wrong
