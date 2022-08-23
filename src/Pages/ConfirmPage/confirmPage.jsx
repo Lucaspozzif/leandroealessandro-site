@@ -50,7 +50,7 @@ export function ConfirmPage() {
             schedule: prof['schedule']
         }
         await setDoc(profRef, update)
-        navigate('/')
+        navigate('/confirmed/' + profIndex + '/' + servIndex + '/' + dayIndex + '/' + timeIndex)
     }
     return (
         <div className='body'>

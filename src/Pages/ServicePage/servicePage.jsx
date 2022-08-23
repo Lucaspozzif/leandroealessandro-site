@@ -12,18 +12,21 @@ export function ServicePage() {
     const { profIndex } = useParams();
     if (data.length == 0) return
     return (
-        <div className='backgroundColor'>
-            {data[profIndex]['services'].map((serv) => {
-                return (
-                    <ItemListServ
-                        key={data[profIndex]['services'].indexOf(serv)}
-                        msg={serv}
-                        profIndex={profIndex}
-                        servIndex={data[profIndex]['services'].indexOf(serv)}
-                    />
-                )
-            })}
+        <div className='body'>
+            <div className='backgroundColor'>
+                {data[profIndex]['services'].map((serv) => {
+                    return (
+                        <ItemListServ
+                            key={data[profIndex]['services'].indexOf(serv)}
+                            msg={serv}
+                            profIndex={profIndex}
+                            servIndex={data[profIndex]['services'].indexOf(serv)}
+                        />
+                    )
+                })}
+            </div>
         </div>
+
     )
 
 }

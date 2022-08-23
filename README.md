@@ -36,8 +36,8 @@ A detailed description of the problem and why it should be solved in that urgenc
 ### Solution (Optional)
 If you have some logic in mind that can solve the problem you can put it here, so it will be easyer to solve and can be released faster
 
-## Last confirming screen
-solved: false
+## Bug 1 - `Last confirming screen`
+solved: `yes`
 Urgency level: 1
 ### Problem
 After choosing a time and confirming it, the customer is just redirected to the inicial page, it's not ideal, the customer don't know if the site just glitched or if it is already marked
@@ -81,3 +81,14 @@ solved: no
 Urgency level: 2
 ### Problem
 There is not a way for the professional to check their schedule
+
+## Price Tables page
+solved : no
+Urgency level: 2
+### Problem
+there is not a way to the customers to know the price
+### Solution
+Create a page and a link in the inicial page to the price table page
+
+## Change Professional and change time buttons not working
+solved : no

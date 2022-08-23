@@ -9,6 +9,7 @@ import { ServicePage } from './Pages/ServicePage/servicePage';
 import { TimePage } from './Pages/TimePage/timePage';
 import { ConfirmPage } from './Pages/ConfirmPage/confirmPage';
 import { Test } from './Content/test';
+import { LastConfirmPage } from './Pages/LastConfirmPage/lastConfirmPage';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path='/select-service/:profIndex' element={<ServicePage />}></Route>
         <Route path='/select-time/:profIndex/:servIndex/:dayIndex' element={<TimePage />}></Route>
         <Route path='/confirm/:profIndex/:servIndex/:dayIndex/:timeIndex' element={<ConfirmPage />}></Route>
+        <Route path='/confirmed/:profIndex/:servIndex/:dayIndex/:timeIndex' element={<LastConfirmPage />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
     </Router>
