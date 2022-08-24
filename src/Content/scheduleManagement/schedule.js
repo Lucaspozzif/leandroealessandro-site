@@ -4,7 +4,7 @@ import { db } from "../Firebase/firebase"
 
 const emptyDay = []
 const lockedDay = []
-for (let i = 0; i < 24; i++) {
+for (let i = 0; i < 23; i++) {
     emptyDay.push(
         {
             taken: false,
@@ -24,7 +24,6 @@ for (let i = 0; i < 24; i++) {
 }
 
 export function checkGenerateDay(data, dateTime, profIndex) {
-    console.log(dateTime)
     const prof = data[profIndex]
     if (prof['schedule'][dateTime]) return
     if(dateTime.split('$')[1] == 0 || dateTime.split('$')[1] == 1){
