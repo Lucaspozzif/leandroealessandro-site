@@ -14,6 +14,7 @@ export function TimePage() {
     const { profIndex } = useParams();
     const { servIndex } = useParams();
     const { dayIndex } = useParams();
+    console.log(dayIndex.split('$')[1])
     if (data.length == 0) return
     checkGenerateDay(data, dayIndex, profIndex)
     return (
@@ -38,6 +39,7 @@ export function TimePage() {
                         />
                     )
                 })}
+                <h1 className='button padding'> O salão funciona de terça a sábado, das 9:00 às 20:00</h1>
 
             </div>
 

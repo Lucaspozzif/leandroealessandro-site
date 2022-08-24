@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { DateGenerator } from '../dateGenerator/dateGenerator'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 import '../../Style/reset.css'
@@ -10,6 +10,7 @@ import './daySelector.css'
 
 const { date, today } = require('../../data/Today/today')
 var { currentDay } = require('../../data/Today/today')
+const {week} =require('../../data/hourCount/hourcount.json')
 
 export function DaySelector(props) {
     const navigate = useNavigate();
@@ -41,8 +42,11 @@ export function DaySelector(props) {
                     </h2>
                 </div>
             </div>
-
+            <div className='centerDiv'>
             <p className='date'>{day.join('/')}</p>
+            <p className='date'>{week[props.day.split('$')[1]]}</p>
+
+            </div>
             <div onClick={
                 () => {
                     currentDay++
@@ -94,8 +98,10 @@ export function DaySelectorIndividual(props) {
                     </h2>
                 </div>
             </div>
-
-            <p className='date'>{day.join('/')}</p>
+            <div>
+                <p className='date'>{day.join('/')}</p>
+                <p>{}</p>
+            </div>
             <div onClick={
                 () => {
                     currentDay++
