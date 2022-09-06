@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../../Content/Firebase/firebase';
 import { ReadProfessional } from '../../Content/Firebase/firestoreDataReader';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import '../../Style/reset.css'
 import '../../Style/style.css'
 import './confirmPage.css'
+import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 
-const { time } = require('../../data/hourCount/hourcount.json')
+const { time } = require('../../Data/hourCount/hourcount.json')
 
 export function ConfirmPage() {
     var navigate = useNavigate()
@@ -30,12 +31,12 @@ export function ConfirmPage() {
     if (data.length == 0) return
 
     const prof = data[profIndex];
-    for (let i = timeIndex; i < parseInt(prof['services'][servIndex]['time'])+parseInt(timeIndex); i++) {
+    for (let i = timeIndex; i < parseInt(prof['services'][servIndex]['time']) + parseInt(timeIndex); i++) {
         prof['schedule'][dayIndex][i]['service'] = prof['services'][servIndex]['name']
         prof['schedule'][dayIndex][i]['name'] = name
         prof['schedule'][dayIndex][i]['number'] = number
         prof['schedule'][dayIndex][i]['taken'] = true
-    
+
     }
     const addSchedule = async () => {
         if (name == '' || number == '') {
@@ -55,11 +56,12 @@ export function ConfirmPage() {
     return (
         <div className='body'>
             <div className='backgroundColor'>
+                <ReturnButton link={'/select-time/' + profIndex + '/' + servIndex + '/' + dayIndex} />
                 <div className='center'>
                     <h1 className='pageTitle'>Você está quase acabando</h1>
                     <div className='button scheduleButton'>
                         <div>
-                            <h1>{prof['services'][servIndex]['name']}, de {time[timeIndex]} as {time[parseInt(prof['services'][servIndex]['time'])+parseInt(timeIndex)]}</h1>
+                            <h1>{prof['services'][servIndex]['name']}, de {time[timeIndex]} as {time[parseInt(prof['services'][servIndex]['time']) + parseInt(timeIndex)]}</h1>
                             <p>Com {prof['name']}</p>
                         </div>
                     </div>
@@ -102,7 +104,7 @@ export function ConfirmPage() {
                     <div onClick={(e) => { addSchedule() }}>
                         <div className='button bottomButton right'>
                             <h1>
-                            Concluir
+                                Concluir
                             </h1>
                         </div>
                     </div>

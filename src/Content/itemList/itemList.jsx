@@ -3,8 +3,8 @@ import '../../Style/reset.css'
 import '../../Style/style.css'
 import './itemList.css'
 
-const { time } = require('../../data/hourCount/hourcount.json')
-const { today } = require('../../data/Today/today')
+const { time } = require('../../Data/hourCount/hourcount.json')
+const { today } = require('../../Data/Today/today')
 
 export function ItemListProf(props) {
     return (

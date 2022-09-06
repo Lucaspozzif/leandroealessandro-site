@@ -8,9 +8,9 @@ import '../../Style/style.css'
 import '../../Style/selectPages.css'
 import './daySelector.css'
 
-const { date, today } = require('../../data/Today/today')
-var { currentDay } = require('../../data/Today/today')
-const {week} =require('../../data/hourCount/hourcount.json')
+const { date, today } = require('../../Data/Today/today')
+var { currentDay } = require('../../Data/Today/today')
+const { week } = require('../../Data/hourCount/hourcount.json')
 
 export function DaySelector(props) {
     const navigate = useNavigate();
@@ -43,8 +43,8 @@ export function DaySelector(props) {
                 </div>
             </div>
             <div className='centerDiv'>
-            <p className='date'>{day.join('/')}</p>
-            <p className='date'>{week[props.day.split('$')[1]]}</p>
+                <p className='date'>{day.join('/')}</p>
+                <p className='date'>{week[props.day.split('$')[1]]}</p>
 
             </div>
             <div onClick={
@@ -100,7 +100,8 @@ export function DaySelectorIndividual(props) {
             </div>
             <div>
                 <p className='date'>{day.join('/')}</p>
-                <p>{}</p>
+                <p className='date'>{week[props.day.split('$')[1]]}</p>
+                <p>{ }</p>
             </div>
             <div onClick={
                 () => {

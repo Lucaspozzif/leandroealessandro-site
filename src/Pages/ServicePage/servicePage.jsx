@@ -6,6 +6,7 @@ import { ItemListServ } from '../../Content/itemList/itemList';
 import '../../Style/reset.css'
 import '../../Style/style.css'
 import '../../Style/selectPages.css'
+import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 
 export function ServicePage() {
     var data = ReadProfessional()
@@ -14,6 +15,7 @@ export function ServicePage() {
     return (
         <div className='body'>
             <div className='backgroundColor'>
+            <ReturnButton link={'/select-professional'}/>
                 {data[profIndex]['services'].map((serv) => {
                     return (
                         <ItemListServ

@@ -7,6 +7,7 @@ import { checkGenerateDay } from '../../Content/scheduleManagement/schedule';
 import '../../Style/reset.css'
 import '../../Style/style.css'
 import '../../Style/selectPages.css'
+import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 
 
 export function IndividualSchedule() {
@@ -18,6 +19,7 @@ export function IndividualSchedule() {
     return (
         <div className='body'>
             <div className='backgroundColor'>
+                <ReturnButton link={'/p'} />
                 <DaySelectorIndividual
                     day={dayIndex}
                     profIndex={profIndex}

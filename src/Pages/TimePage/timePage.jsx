@@ -7,6 +7,7 @@ import { checkGenerateDay } from '../../Content/scheduleManagement/schedule';
 import '../../Style/reset.css'
 import '../../Style/style.css'
 import '../../Style/selectPages.css'
+import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 
 
 export function TimePage() {
@@ -20,6 +21,7 @@ export function TimePage() {
     return (
         <div className='body'>
             <div className='backgroundColor'>
+            <ReturnButton link={'/select-service/'+profIndex}/>
                 <DaySelector
                     day={dayIndex}
                     servIndex={servIndex}
