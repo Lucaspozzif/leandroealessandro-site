@@ -1,0 +1,9 @@
+.returnButton{
+    height: 40px;
+    width: 40px;
+    display: grid;
+    align-items: center;
+}
+.returnIcon{
+    height: 36px;
+}
