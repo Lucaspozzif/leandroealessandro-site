@@ -5,7 +5,6 @@ import '../../Style/reset.css'
 import '../../Style/style.css'
 import { db } from '../Firebase/firebase'
 import { ReadProfessional } from '../Firebase/firestoreDataReader'
-import { saveDatabase } from '../SaveDatabase/saveDatabase'
 import './itemList.css'
 
 const { time } = require('../../Data/hourCount/hourcount.json')
