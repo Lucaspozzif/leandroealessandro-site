@@ -30,6 +30,7 @@ export function IndividualSchedule() {
                             key={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
                             msg={hour}
                             index={data[profIndex]['schedule'][dayIndex].indexOf(hour)}
+                            data = {[profIndex,dayIndex]}
                         />
                     )
                 })}

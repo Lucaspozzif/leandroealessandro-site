@@ -8,9 +8,7 @@ export function InicialPage() {
     return (
         <div  className='inicialPage'>
             <div className='background'>
-                <Link to='/p'>
                 <img className='logoImage' src={require('../../Assets/Logo/logoBranca.png')} />
-                </Link>
                 <div className='textBlock'>
                     <h1>Olá!</h1>
                     <p className='darkText salutation'>Nós do Salão Leandro e Alessandro estamos prontos para atendê-lo</p>

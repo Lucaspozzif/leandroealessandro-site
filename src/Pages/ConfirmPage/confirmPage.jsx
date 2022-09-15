@@ -61,7 +61,7 @@ export function ConfirmPage() {
                     <h1 className='pageTitle'>Você está quase acabando</h1>
                     <div className='button scheduleButton'>
                         <div>
-                            <h1>{prof['services'][servIndex]['name']}, de {time[timeIndex]} as {time[parseInt(prof['services'][servIndex]['time']) + parseInt(timeIndex)]}</h1>
+                            <h1>{prof['services'][servIndex]['name']}, às {time[timeIndex]}</h1>
                             <p>Com {prof['name']}</p>
                         </div>
                     </div>
@@ -76,21 +76,6 @@ export function ConfirmPage() {
                     <p className='inputLabel'>Digite seu número</p>
                     <input type={number} onChange={numberValue}></input>
 
-                </div>
-
-                <div className='spaceBox'></div>
-                <div className='spaceBox'></div>
-                <div className='button changeButton'>
-                    <h1>Alterar Horário</h1>
-                    <p>Dia {dayIndex.split('.').join('/')} - {time[timeIndex]}</p>
-                </div>
-                <div className='spaceBox'></div>
-
-                <div>
-                    <div className='button changeButton'>
-                        <h1>Alterar Profissional</h1>
-                        <p>{prof['name']}</p>
-                    </div>
                 </div>
                 <div className='bottomGroup'>
                     <Link to='/'>

@@ -17,16 +17,20 @@ export function LastConfirmPage() {
     if (data.length == 0) return
 
     const prof = data[profIndex];
+
+    var dia = dayIndex.split('$')[0]
+    dia = dia.split('.')
+    dia[1]++
     return (
         <div className='body centerDiv'>
             <div className='imgDiv'>
                 <img className='endLogo' src={require('../../Assets/Logo/logoBranca.png')} />
             </div>
-            <h1>Agendado para o dia {dayIndex.split('$')[0]}</h1>
+            <h1>Agendado para o dia {dia.join('/')}</h1>
 
             <div className='button scheduleButton'>
                 <div>
-                    <h1>{prof['services'][servIndex]['name']}, de {time[timeIndex]} as {time[parseInt(prof['services'][servIndex]['time']) + parseInt(timeIndex)]}</h1>
+                    <h1>{prof['services'][servIndex]['name']}, às {time[timeIndex]}</h1>
                     <p>Com {prof['name']}</p>
                 </div>
             </div>
