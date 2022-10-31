@@ -221,54 +221,6 @@ export function checkGenerateDay(data, dateTime, profIndex) {
             }
         }
         if(profIndex == 5){
-            
-            
-            prof['schedule'][dateTime][0] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-
-            prof['schedule'][dateTime][18] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][19] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][20] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][21] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][22] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-
-        }
-        if(profIndex == 6){
             prof['schedule'][dateTime][21] =
             {
                 taken: true,

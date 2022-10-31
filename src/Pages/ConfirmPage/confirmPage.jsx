@@ -97,7 +97,5 @@ export function ConfirmPage() {
             </div>
 
         </div>
-
     )
-
 }
