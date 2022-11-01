@@ -238,11 +238,20 @@ export function checkGenerateDay(data, dateTime, profIndex) {
         }
 
     }
+    function compare(a, b) {
+      if (a["name"] < b["name"]) {
+        return -1;
+      }
+      if (a["name"] > b["name"]) {
+        return 1;
+      }
+      return 0;
+    }
     const addSchedule = async () => {
         const profRef = doc(db, 'professionals', data[profIndex]['id'])
         const update = {
             name: prof['name'],
-            services: prof['services'],
+            services: prof['services'].sort(compare),
             occupation: prof['occupation'],
             schedule: prof['schedule']
         }

@@ -118,7 +118,6 @@ export function ItemListTimeSecret(props) {
               "taken"
             ] = false;
             addSchedule();
-            console.log(prof["schedule"]);
             setTaken(false);
           }}
           className={"deleteIcon"}
@@ -142,7 +141,6 @@ export function ItemListTimeSecret(props) {
             data[params[0]]["schedule"][params[1]][props.index]["number"] =
               "bloqueado";
             addSchedule();
-            console.log(prof["schedule"]);
             setTaken(true);
           }}
           className={"deleteIcon"}

@@ -15,7 +15,6 @@ export function TimePage() {
     const { profIndex } = useParams();
     const { servIndex } = useParams();
     const { dayIndex } = useParams();
-    console.log(dayIndex.split('$')[1])
     if (data.length == 0) return
     checkGenerateDay(data, dayIndex, profIndex)
     return (

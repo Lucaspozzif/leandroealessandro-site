@@ -7,15 +7,6 @@ import "../../Style/reset.css";
 import "../../Style/style.css";
 import "../../Style/selectPages.css";
 import { ReturnButton } from "../../Content/ReturnButton/returnButton";
-function compare( a, b ) {
-    if ( a['name'] < b['name'] ){
-      return -1;
-    }
-    if ( a['name'] > b['name'] ){
-      return 1;
-    }
-    return 0;
-  }
 export function ServicePage() {
   var data = ReadProfessional();
   const { profIndex } = useParams();
@@ -24,7 +15,7 @@ export function ServicePage() {
     <div className="body">
       <div className="backgroundColor">
         <ReturnButton link={"/select-professional"} />
-        {data[profIndex]["services"].sort(compare).map((serv) => {
+        {data[profIndex]["services"].map((serv) => {
           return (
             <ItemListServ
               key={data[profIndex]["services"].indexOf(serv)}
