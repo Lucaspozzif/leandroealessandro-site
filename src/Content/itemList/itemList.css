@@ -21,3 +21,11 @@
 .profPhoto{
     
 }
+.number{
+    margin-top: 5px;
+}
+.telephoneLink{
+    color: #DED290;
+    text-decoration: underline !important;
+    text-decoration: none;
+}

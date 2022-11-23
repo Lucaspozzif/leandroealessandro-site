@@ -98,6 +98,7 @@ export function ItemListTimeSecret(props) {
       services: prof["services"],
       occupation: prof["occupation"],
       schedule: prof["schedule"],
+      photo: prof["photo"],
     };
     await setDoc(profRef, update);
     navigate(0);
@@ -106,17 +107,22 @@ export function ItemListTimeSecret(props) {
   if (props.msg["taken"] == true && taken == true) {
     return (
       <div className="greyButton scheduleButton editableButton">
+
         <div>
           <h1>{time[props.index]}</h1>
           <p>
             {props.msg["name"]} agendou {props.msg["service"]}
           </p>
+          <a className="telephoneLink" href={`tel:${props.msg['number']}`}>
+            <p className="number">
+              {props.msg["number"]}
+            </p>
+          </a>
         </div>
         <img
           onClick={() => {
-            data[params[0]]["schedule"][params[1]][props.index][
-              "taken"
-            ] = false;
+            data[params[0]]["schedule"][params[1]][props.index]["taken"] = false;
+            data[params[0]]["schedule"][params[1]][props.index]["name"] = '';
             addSchedule();
             setTaken(false);
           }}
@@ -149,9 +155,4 @@ export function ItemListTimeSecret(props) {
       </div>
     );
   }
-  return (
-    <div className="button scheduleButton">
-      <h1>{time[props.index]}</h1>
-    </div>
-  );
 }

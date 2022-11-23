@@ -253,7 +253,8 @@ export function checkGenerateDay(data, dateTime, profIndex) {
             name: prof['name'],
             services: prof['services'].sort(compare),
             occupation: prof['occupation'],
-            schedule: prof['schedule']
+            schedule: prof['schedule'],
+            photo: prof["photo"],
         }
         await setDoc(profRef, update)
     }

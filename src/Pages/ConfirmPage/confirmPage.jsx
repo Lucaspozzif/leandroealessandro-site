@@ -48,7 +48,8 @@ export function ConfirmPage() {
             name: prof['name'],
             services: prof['services'],
             occupation: prof['occupation'],
-            schedule: prof['schedule']
+            schedule: prof['schedule'],
+            photo: prof["photo"],
         }
         await setDoc(profRef, update)
         navigate('/confirmed/' + profIndex + '/' + servIndex + '/' + dayIndex + '/' + timeIndex)
