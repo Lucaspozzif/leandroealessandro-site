@@ -11,11 +11,14 @@ const { time } = require("../../Data/hourCount/hourcount.json");
 const { today } = require("../../Data/Today/today");
 
 export function ItemListProf(props) {
+  console.log(props)
   return (
     <Link to={"/select-service/" + props.index}>
       <div className="button scheduleButton">
         <div className="flexDiv">
-          <div className="profPhoto"></div>
+          <div>
+            <img className='profPhoto' src={props.msg.photo} />
+          </div>
           <div>
             <h1 className="title">{props.msg[props.title]}</h1>
             <p className="subtitle">{props.msg[props.subtitle].join(", ")}</p>

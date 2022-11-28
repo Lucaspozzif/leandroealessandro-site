@@ -1,11 +1,11 @@
-
-.backgroundColor{
+.backgroundColor {
     background-color: #33372F;
     display: grid;
-    justify-content: center;
     align-content: center;
+    padding-block: 15px;
 }
-.body{
+
+.body {
     background-color: #33372F;
     min-height: 100vh;
 }

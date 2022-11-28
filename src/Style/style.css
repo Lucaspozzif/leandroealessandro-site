@@ -22,7 +22,7 @@ p{
 .padding{
     margin-top: 40px;
     margin-bottom: 20px;
-    width: 300px;
+    margin-inline: 10px;
     text-align: center;
     font-size: 18px;
     height: 60px;

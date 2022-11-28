@@ -1,6 +1,8 @@
 .returnButton{
     height: 40px;
     width: 40px;
+    margin-block: 15px;
+    margin-inline: 10px;
     display: grid;
     align-items: center;
 }

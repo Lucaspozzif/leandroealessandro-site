@@ -30,7 +30,6 @@ export function IndividualSchedule() {
                 alert('Remova todos os agendamentos antes!')
                 return
             }
-            console.log(prof['schedule'][dayIndex][i]['name'])
             lockedDay.push(
                 {
                     taken: true,
