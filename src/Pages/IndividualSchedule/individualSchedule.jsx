@@ -60,11 +60,11 @@ export function IndividualSchedule() {
             <div className='backgroundColor'>
                 <div className='headerDiv'>
                     <ReturnButton link={'/p'} />
-                    <div className='button blockButton' onClick={() => {
-                        blockAllDay()
-                    }}>
-                        <h2>Bloquear tudo</h2>
-                    </div>
+                        <div className='button blockButton' onClick={() => {
+                            blockAllDay()
+                        }}>
+                            <h2>Bloquear tudo</h2>
+                        </div>
 
                 </div>
                 <DaySelectorIndividual

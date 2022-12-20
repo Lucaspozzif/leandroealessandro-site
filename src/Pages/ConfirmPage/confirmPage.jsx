@@ -16,8 +16,15 @@ export function ConfirmPage() {
     var navigate = useNavigate()
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
+    var tempNum = number
     const numberValue = (e) => {
-        setNumber(e.target.value)
+        tempNum = e.target.value
+        if(number.includes('(')){
+            tempNum = tempNum.replace('(','')
+            tempNum = tempNum.replace(')','')
+            setNumber(tempNum)
+        }
+        setNumber(tempNum)
     }
     const nameValue = (e) => {
         setName(e.target.value)
@@ -43,15 +50,26 @@ export function ConfirmPage() {
             alert('digite seu nome e número por favor')
             return
         }
-        const profRef = doc(db, 'professionals', data[profIndex]['id'])
-        const update = {
-            name: prof['name'],
-            services: prof['services'],
-            occupation: prof['occupation'],
-            schedule: prof['schedule'],
-            photo: prof["photo"],
+        if (number.length != 11) {
+            alert('digite um número válido por favor (XX)XXXXXXXXX sem hífen')
+            return
         }
-        await setDoc(profRef, update)
+        
+        var trollNum = true
+        for (let i = 0; i < number.length; i++){
+            if(number[i] != number[0])trollNum = false         
+        }
+        if(!trollNum){
+            const profRef = doc(db, 'professionals', data[profIndex]['id'])
+            const update = {
+                name: prof['name'],
+                services: prof['services'],
+                occupation: prof['occupation'],
+                schedule: prof['schedule'],
+                photo: prof["photo"],
+            }
+            await setDoc(profRef, update)
+        }
         navigate('/confirmed/' + profIndex + '/' + servIndex + '/' + dayIndex + '/' + timeIndex)
     }
     return (
@@ -75,7 +93,7 @@ export function ConfirmPage() {
                     <div className='spaceBox'></div>
 
                     <p className='inputLabel'>Digite seu número</p>
-                    <input type={number} onChange={numberValue}></input>
+                    <input type={number} onKeyUp={numberValue} placeholder='(XX)XXXXXXXXX'></input>
 
                 </div>
                 <div className='bottomGroup'>

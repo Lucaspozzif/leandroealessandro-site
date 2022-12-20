@@ -11,3 +11,13 @@
     height: 20px;
     margin-inline: 10px;
 }
+.saveButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 5px;
+    margin-top: 5px;
+    height: 20px;
+    margin-inline: 10px;
+
+}

@@ -11,7 +11,6 @@ const { time } = require("../../Data/hourCount/hourcount.json");
 const { today } = require("../../Data/Today/today");
 
 export function ItemListProf(props) {
-  console.log(props)
   return (
     <Link to={"/select-service/" + props.index}>
       <div className="button scheduleButton">
@@ -61,9 +60,27 @@ export function ItemListTime(props) {
     i++
   ) {
     if (!props.data[i]) return;
+    if (timeChecker(i)) {
+      appear = false;
+    }
     if (props.data[i]["taken"] == true) {
       appear = false;
     }
+  }
+  function timeChecker(i) {
+    const date = new Date()
+    const h = date.getHours()
+    const m = date.getMinutes()
+    const checkTime = `${h}:${m}`
+    const arrayTime = time[i].split(':')
+    const minutesTime = parseInt(arrayTime[0]) * 60 + parseInt(arrayTime[1])
+    const minutesTimeCurrent = h * 60 + m
+
+    const d = date.getDate()
+
+
+    if (minutesTime < minutesTimeCurrent && d ==props.dayIndex.split('.')[0] ) return true
+
   }
   if (appear == true) {
     return (
@@ -116,7 +133,7 @@ export function ItemListTimeSecret(props) {
           <p>
             {props.msg["name"]} agendou {props.msg["service"]}
           </p>
-          <a className="telephoneLink" href={`tel:${props.msg['number']}`}>
+          <a className="telephoneLink" href={`https://wa.me/55${props.msg['number']}`}>
             <p className="number">
               {props.msg["number"]}
             </p>
