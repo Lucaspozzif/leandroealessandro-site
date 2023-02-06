@@ -236,6 +236,37 @@ export function checkGenerateDay(data, dateTime, profIndex) {
                 service: 'bloqueado',
             }
         }
+        if(profIndex == 7){
+            prof['schedule'][dateTime][0] =
+            {
+                taken: true,
+                name: 'bloqueado',
+                number: 'bloqueado',
+                service: 'bloqueado',
+            }
+            prof['schedule'][dateTime][1] =
+            {
+                taken: true,
+                name: 'bloqueado',
+                number: 'bloqueado',
+                service: 'bloqueado',
+            }
+            prof['schedule'][dateTime][2] =
+            {
+                taken: true,
+                name: 'bloqueado',
+                number: 'bloqueado',
+                service: 'bloqueado',
+            }
+            prof['schedule'][dateTime][3] =
+            {
+                taken: true,
+                name: 'bloqueado',
+                number: 'bloqueado',
+                service: 'bloqueado',
+            }
+
+        }
 
     }
     function compare(a, b) {
