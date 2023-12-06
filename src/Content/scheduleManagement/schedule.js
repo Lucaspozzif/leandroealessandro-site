@@ -1,5 +1,5 @@
 import { doc, setDoc } from "firebase/firestore"
-import { currentDay, date } from "../../Data/Today/today"
+import { currentDay, date } from "../../data/Today/today"
 import { db } from "../Firebase/firebase"
 
 const emptyDay = []

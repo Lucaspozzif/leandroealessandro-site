@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import '../../Style/selectPages.css'
 import './lastConfirmPage.css'
 
-const { time } = require('../../Data/hourCount/hourcount.json')
+const { time } = require('../../data/hourCount/hourcount.json')
 
 export function LastConfirmPage() {
     var data = ReadProfessional()

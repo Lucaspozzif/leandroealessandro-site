@@ -8,9 +8,9 @@ import '../../Style/style.css'
 import '../../Style/selectPages.css'
 import './daySelector.css'
 
-const { date, today } = require('../../Data/Today/today')
-var { currentDay } = require('../../Data/Today/today')
-const { week } = require('../../Data/hourCount/hourcount.json')
+const { date, today } = require('../../data/Today/today')
+var { currentDay } = require('../../data/Today/today')
+const { week } = require('../../data/hourCount/hourcount.json')
 
 export function DaySelector(props) {
     const navigate = useNavigate();

@@ -11,23 +11,23 @@ export function ProfessionalPage() {
     const data = ReadProfessional()
     return (
         <div className="body">
-        <div className="backgroundColor">
-            <ReturnButton link={'/'}/>
-            {data.map(
-                (prof => {
-                    return (
-                        <ItemListProf
-                        key = {prof['name']}
-                            msg={prof}
-                            title={'name'}
-                            subtitle={'occupation'}
-                            index={data.indexOf(prof)}
-                        />
-                    )
-                })
-            )
-            }
-        </div>
+            <div className="backgroundColor">
+                <ReturnButton link={'/'} />
+                {data.map(
+                    (prof => {
+                        return (
+                            <ItemListProf
+                                key={prof['name']}
+                                msg={prof}
+                                title={'name'}
+                                subtitle={'occupation'}
+                                index={data.indexOf(prof)}
+                            />
+                        )
+                    })
+                )
+                }
+            </div>
 
         </div>
     )

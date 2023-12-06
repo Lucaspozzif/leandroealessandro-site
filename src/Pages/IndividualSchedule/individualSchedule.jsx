@@ -12,8 +12,6 @@ import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../Content/Firebase/firebase';
 
-
-
 export function IndividualSchedule() {
     const navigate = useNavigate();
     var data = ReadProfessional()

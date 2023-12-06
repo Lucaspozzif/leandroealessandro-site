@@ -10,7 +10,7 @@ import '../../Style/style.css'
 import './confirmPage.css'
 import { ReturnButton } from '../../Content/ReturnButton/returnButton';
 
-const { time } = require('../../Data/hourCount/hourcount.json')
+const { time } = require('../../data/hourCount/hourcount.json')
 
 export function ConfirmPage() {
     var navigate = useNavigate()
