@@ -1,26 +1,60 @@
-.inputLabel{
-    font-size: 16px;
-    color: #AC814F;
+.inputLabel {
+  font-size: 16px;
+  color: #ac814f;
 }
-.changeButton{
-    height: 60px;
-    width: 190px;
-    display: grid;
-    align-content: center;
-    padding-left: 10px;
+.changeButton {
+  height: 60px;
+  width: 190px;
+  display: grid;
+  align-content: center;
+  padding-left: 10px;
 }
-.bottomButton{
-    position: absolute;
-    height: 40px;
-    width: 120px;
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    bottom: 20px;
+.bottomButton {
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  bottom: 20px;
 }
-.left{
-    left: 20px;
+.left {
+  left: 20px;
 }
-.right{
-    right: 20px;
+.right {
+  right: 20px;
+}
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #33372f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Adjust the z-index to make sure it overlays other content */
+}
+
+.loading-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #825c3b; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-screen p {
+  font-size: 20px;
 }
