@@ -1,46 +1,52 @@
-.inicialPage{
-    background-color: #545550;
-    height: 100vh;
+.inicialPage {
+  background-color: #545550;
+  height: 100vh;
 }
-.background{
-    background-color: #33372F;
-    position: relative;
-    height: 200px;
+.background {
+  background-color: #33372f;
+  position: relative;
+  height: 200px;
 }
-.logoImage{
-    width: 100px;
-    position: absolute;
-    top: -18px;
-    left: 0;
+.logoImage {
+  width: 100px;
+  position: absolute;
+  top: -18px;
+  left: 0;
 }
-.textBlock{
-    position: absolute;
-    top: 70px;
-    left: 20px;
+.textBlock {
+  position: absolute;
+  top: 70px;
+  left: 20px;
 }
-.salutation{
-    width: 145px;
+.salutation {
+  width: 145px;
 }
-.inicialButton{
-    position: absolute;
-    text-align: center;
-    align-items: center;
-    display: grid;
-    height: 40px;
-    width: 120px;
-    right: 40px;
-    bottom: 40px;
+.inicialButton {
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  height: 40px;
+  width: 120px;
+  right: 40px;
+  bottom: 40px;
 }
-.whatsappDiv{
-    background-color: #33372F;
-    height: 60px;
-    width: 60px;
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+.whatsappDiv {
+  background-color: #33372f;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.version {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: white;
 }
