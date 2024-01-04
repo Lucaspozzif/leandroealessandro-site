@@ -1,293 +1,93 @@
-import { doc, setDoc } from "firebase/firestore"
-import { currentDay, date } from "../../data/Today/today"
-import { db } from "../Firebase/firebase"
+import { doc, setDoc } from "firebase/firestore";
+import { currentDay, date } from "../../data/Today/today";
+import { db } from "../Firebase/firebase";
 
-const emptyDay = []
-const lockedDay = []
+const emptyDay = [];
+const lockedDay = [];
 for (let i = 0; i < 23; i++) {
-    emptyDay.push(
-        {
-            taken: false,
-            name: '',
-            number: '',
-            service: '',
-        }
-    )
-    lockedDay.push(
-        {
-            taken: true,
-            name: 'bloqueado',
-            number: 'bloqueado',
-            service: 'bloqueado',
-        }
-    )
+  emptyDay.push({
+    taken: false,
+    name: "",
+    number: "",
+    service: "",
+  });
+  lockedDay.push({
+    taken: true,
+    name: "bloqueado",
+    number: "bloqueado",
+    service: "bloqueado",
+  });
 }
 
 export function checkGenerateDay(data, dateTime, profIndex) {
-
-    const prof = data[profIndex]
-    //Limitations on specific professionals accounts
-    if (profIndex == 0) {
-
-    }
-
-    if (prof['schedule'][dateTime]) return
-
-    if (dateTime.split('$')[1] == 0 || dateTime.split('$')[1] == 1) {
-        prof['schedule'][dateTime] = lockedDay
-
-    } else {
-        prof['schedule'][dateTime] = emptyDay
-
-        if (profIndex == 1) {
-            prof['schedule'][dateTime][19] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][20] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][21] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][22] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-        }
-        if (profIndex == 2) {
-            prof['schedule'][dateTime][0] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][1] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][2] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][3] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][4] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][5] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][6] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][7] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-
-
-            prof['schedule'][dateTime][19] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][20] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][21] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][22] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-
-        }
-        if(profIndex == 3){
-            
-            prof['schedule'][dateTime][0] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][1] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][2] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][3] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-        }
-        if(profIndex == 4){
-            
-            prof['schedule'][dateTime][0] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][1] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][2] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][3] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-        }
-        if(profIndex == 5){
-            prof['schedule'][dateTime][21] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][22] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-        }
-        if(profIndex == 7){
-            prof['schedule'][dateTime][0] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][1] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][2] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-            prof['schedule'][dateTime][3] =
-            {
-                taken: true,
-                name: 'bloqueado',
-                number: 'bloqueado',
-                service: 'bloqueado',
-            }
-
-        }
-
-    }
-    function compare(a, b) {
-      if (a["name"] < b["name"]) {
-        return -1;
+  const prof = data[profIndex];
+  //Limitations on specific professionals accounts
+  switch (profIndex) {
+    case "1": // Alessandro
+      for (let i = 20; i <= 22; i++) {
+        prof["schedule"][dateTime][i] = {
+          taken: true,
+          name: "bloqueado",
+          number: "bloqueado",
+          service: "bloqueado",
+        };
       }
-      if (a["name"] > b["name"]) {
-        return 1;
+      break;
+    case "3": // Marcela
+      for (let i = 16; i <= 22; i++) {
+        prof["schedule"][dateTime][i] = {
+          taken: true,
+          name: "bloqueado",
+          number: "bloqueado",
+          service: "bloqueado",
+        };
       }
-      return 0;
+      break;
+
+    case "4": // Flaviane
+    case "7": // Leandro
+      for (let i = 0; i <= 4; i++) {
+        prof["schedule"][dateTime][i] = {
+          taken: true,
+          name: "bloqueado",
+          number: "bloqueado",
+          service: "bloqueado",
+        };
+      }
+      break;
+
+    default:
+      break;
+  }
+
+  if (prof["schedule"][dateTime]) return;
+
+  if (dateTime.split("$")[1] == -1 || dateTime.split("$")[1] == 1) {
+    prof["schedule"][dateTime] = lockedDay;
+  } else {
+    prof["schedule"][dateTime] = emptyDay;
+    // time conditions will be added
+  }
+  function compare(a, b) {
+    if (a["name"] < b["name"]) {
+      return -1;
     }
-    const addSchedule = async () => {
-        const profRef = doc(db, 'professionals', data[profIndex]['id'])
-        const update = {
-            name: prof['name'],
-            services: prof['services'].sort(compare),
-            occupation: prof['occupation'],
-            schedule: prof['schedule'],
-            photo: prof["photo"],
-        }
-        await setDoc(profRef, update)
+    if (a["name"] > b["name"]) {
+      return 1;
     }
-    addSchedule()
+    return 0;
+  }
+  console.log(prof.schedule[dateTime]);
+  const addSchedule = async () => {
+    const profRef = doc(db, "professionals", data[profIndex]["id"]);
+    const update = {
+      name: prof["name"],
+      services: prof["services"].sort(compare),
+      occupation: prof["occupation"],
+      schedule: prof["schedule"],
+      photo: prof["photo"],
+    };
+    await setDoc(profRef, update);
+  };
+  addSchedule();
 }
