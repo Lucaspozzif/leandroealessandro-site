@@ -63,17 +63,18 @@ export function ConfirmPage() {
       setLoading(true);
       const profRef = doc(db, "professionals", data[profIndex]["id"]);
       const update = {
-        name: prof["name"],
-        services: prof["services"],
-        occupation: prof["occupation"],
-        schedule: prof["schedule"],
-        photo: prof["photo"],
+        name: prof?.name || "",
+        services: prof?.services || [],
+        occupation: prof?.occupation || "",
+        schedule: prof?.schedule || {},
+        photo: prof?.photo || "", // Ensure that prof.photo is defined or provide a default value
       };
       await setDoc(profRef, update);
       setLoading(false);
     }
     navigate("/confirmed/" + profIndex + "/" + servIndex + "/" + dayIndex + "/" + timeIndex);
   };
+
   return loading ? (
     <div className='loading-screen'>
       <div className='loading-spinner'></div>
