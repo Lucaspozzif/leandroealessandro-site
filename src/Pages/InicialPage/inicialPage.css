@@ -50,3 +50,21 @@
   left: 5px;
   color: white;
 }
+.news {
+  color: #ded290;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  right: 40px;
+  bottom: 15px;
+}
+.anouncement {
+  font-size: 14px;
+  color: #ded290;
+  position: absolute;
+  opacity: .8;
+  text-align: center;
+  right: 10px;
+  left: 10px;
+  top: 210px;
+}
